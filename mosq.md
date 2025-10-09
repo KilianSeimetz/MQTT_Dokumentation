@@ -44,11 +44,11 @@ PowerShell als Administrator öffnen und ausführen:
 ```bash
 wsl --install
 ```
-Windows neu starten.
+- Windows neu starten.
 
-Ubuntu aus dem Microsoft Store installieren.
+- Ubuntu aus dem Microsoft Store installieren.
 
-Ubuntu-Konsole starten.
+- Ubuntu-Konsole starten.
 
 ---
 
@@ -167,5 +167,6 @@ Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
 | **PC2** | Broker | WSL Ubuntu mit Mosquitto |
 | **PC1** | Client | Windows-System, verbindet sich mit Broker über Netzwerk-IP |
 | **Port** | 1883/TCP | Muss in der Windows-Firewall auf PC2 freigegeben werden |
+
 
 
