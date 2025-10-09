@@ -121,7 +121,7 @@ netsh interface portproxy add v4tov4 listenport=1883 listenadress=0.0.0.0 connec
 
 ---
 
-## 3. Konfiguration der Windows-Firewall auf PC2
+## 7. Konfiguration der Windows-Firewall auf PC2
 
 - Öffne Windows Defender Firewall über die Suche.
 - Wähle **Erweiterte Einstellungen**.
@@ -129,21 +129,22 @@ netsh interface portproxy add v4tov4 listenport=1883 listenadress=0.0.0.0 connec
 - **Regeltyp:** Port → Weiter.
 - **Protokoll:** TCP → Port: 1883 → Weiter.
 - **Aktion:** Verbindung zulassen → Weiter.
-- **Profile:** Privat (ggf. Domäne/Öffentlich) → Weiter.
+- **Profile:** Privat → Weiter.
 - **Name:** MQTT 1883 freigeben → Fertigstellen.
 
 ---
 
-## 4. PC1 – Vorbereitung des MQTT-Clients (Windows)
+## 8. PC1 – Vorbereitung des MQTT-Clients (Windows)
 
 - Lade Mosquitto für Windows herunter und installiere es:  
-👉 [https://mosquitto.org/download/](https://mosquitto.org/download/)  
+👉 [https://mosquitto.org/download/](https://mosquitto.org/download/)
+- mosquitto-2.0.22-install-windows-x64.exe (Version Variabel(Neuste Version stand 09.10.2025)
 - Installation ausführen.
 - Eingabeaufforderung (CMD) als Administrator öffnen.
 
 ---
 
-## 5. Test der Kommunikation
+## 9. Test der Kommunikation
 
 ### Schritt 1: Subscriber auf PC2 starten (Ubuntu)
 
@@ -153,7 +154,7 @@ mosquitto_sub -h <IP-Adresse> -t test/topic
 
 IP-Adresse durch notierte Adresse aus Schritt 5 ersetzen
 
-### Schritt 2: Nachricht von PC1 senden (Windows)
+### Schritt 10: Nachricht von PC1 senden (Windows)
 
 ```bash
 mosquitto_pub -h <IP-Adresse> -t test/topic -m "Hallo von PC1"
@@ -166,13 +167,14 @@ Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
 
 ---
 
-## 6. Zusammenfassung
+## 11. Zusammenfassung
 
 | Komponente | Aufgabe | Beschreibung |
 |------------|--------|--------------|
 | **PC2** | Broker | WSL Ubuntu mit Mosquitto |
 | **PC1** | Client | Windows-System, verbindet sich mit Broker über Netzwerk-IP |
 | **Port** | 1883/TCP | Muss in der Windows-Firewall auf PC2 freigegeben werden |
+
 
 
 
