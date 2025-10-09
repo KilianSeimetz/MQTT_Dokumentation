@@ -132,6 +132,7 @@ netsh interface portproxy add v4tov4 listenport=1883 listenadress=0.0.0.0 connec
 - **Profile:** Privat → Weiter.
 - **Name:** MQTT 1883 freigeben → Fertigstellen.
 
+![Firewall](https://i.imgur.com/7D3fBi9.png)
 ---
 
 ## 8. PC1 – Vorbereitung des MQTT-Clients (Windows)
@@ -174,6 +175,7 @@ Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
 | **PC2** | Broker | WSL Ubuntu mit Mosquitto |
 | **PC1** | Client | Windows-System, verbindet sich mit Broker über Netzwerk-IP |
 | **Port** | 1883/TCP | Muss in der Windows-Firewall auf PC2 freigegeben werden |
+
 
 
 
