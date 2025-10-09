@@ -127,7 +127,7 @@ netsh interface portproxy add v4tov4 listenport=1883 listenadress=0.0.0.0 connec
 - Wähle **Erweiterte Einstellungen**.
 - Gehe zu **Eingehende Regeln → Neue Regel…**
 - **Regeltyp:** Port → Weiter.
-- **Protokoll:** TCP → Port: 1883 → Weiter.
+- **Protokoll:** TCP → Bestimmter Port: 1883 → Weiter.
 - **Aktion:** Verbindung zulassen → Weiter.
 - **Profile:** Privat → Weiter.
 - **Name:** MQTT 1883 freigeben → Fertigstellen.
@@ -146,7 +146,7 @@ netsh interface portproxy add v4tov4 listenport=1883 listenadress=0.0.0.0 connec
 
 ## 9. Test der Kommunikation
 
-### Schritt 1: Subscriber auf PC2 starten (Ubuntu)
+### Schritt 10: Subscriber auf PC2 starten (Ubuntu)
 
 ```bash
 mosquitto_sub -h <IP-Adresse> -t test/topic
@@ -154,7 +154,7 @@ mosquitto_sub -h <IP-Adresse> -t test/topic
 
 IP-Adresse durch notierte Adresse aus Schritt 5 ersetzen
 
-### Schritt 10: Nachricht von PC1 senden (Windows)
+### Schritt 11: Nachricht von PC1 senden (Windows)
 
 ```bash
 mosquitto_pub -h <IP-Adresse> -t test/topic -m "Hallo von PC1"
@@ -167,13 +167,14 @@ Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
 
 ---
 
-## 11. Zusammenfassung
+## 12. Zusammenfassung
 
 | Komponente | Aufgabe | Beschreibung |
 |------------|--------|--------------|
 | **PC2** | Broker | WSL Ubuntu mit Mosquitto |
 | **PC1** | Client | Windows-System, verbindet sich mit Broker über Netzwerk-IP |
 | **Port** | 1883/TCP | Muss in der Windows-Firewall auf PC2 freigegeben werden |
+
 
 
 
