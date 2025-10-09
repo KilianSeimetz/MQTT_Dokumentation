@@ -83,6 +83,11 @@ sudo pkill mosquitto
 mosquitto -c /etc/mosquitto/mosquitto.conf -v
 ```
 
+- Ein weiters CMD Fenster als Admin öffnen
+- wsl -> Enter
+- In diesen Fenster weiter arbeiten
+
+
 ---
 
 ### Schritt 5: IP-Adresse von PC2 ermitteln
@@ -98,9 +103,15 @@ Diese wird später auf PC1 benötigt, um eine Verbindung aufzubauen.
 
 ### Schritt 6: Port Weiterleitung einrichten
 
+- Powershell als Admin öffnen
+- Führe folgenden Befehl aus:
+
 ```bash
-netsh interface portproxy add v4tov4 listenport=1883 listenadress=0.0.0.0 connectport=1883 connectadress=<Notierte IP adresse aus Schritt 5>
+netsh interface portproxy add v4tov4 listenport=1883 listenadress=0.0.0.0 connectport=1883 connectadress=<IP-Adresse>
 ```
+
+`connectadress` IP-Adresse durch notierte Adresse ersetzen
+
 
 ---
 
@@ -131,14 +142,18 @@ netsh interface portproxy add v4tov4 listenport=1883 listenadress=0.0.0.0 connec
 ### Schritt 1: Subscriber auf PC2 starten (Ubuntu)
 
 ```bash
-mosquitto_sub -h 192.168.1.50 -t test/topic
+mosquitto_sub -h <IP-Adresse> -t test/topic
 ```
+
+IP-Adresse durch notierte Adresse aus Schritt 5 ersetzen
 
 ### Schritt 2: Nachricht von PC1 senden (Windows)
 
 ```bash
-mosquitto_pub -h 192.168.1.50 -t test/topic -m "Hallo von PC1"
+mosquitto_pub -h <IP-Adresse> -t test/topic -m "Hallo von PC1"
 ```
+
+IP-Adresse durch die lokale IP-Adresse von PC1 ersetzen
 
 ✅ Ergebnis:  
 Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
@@ -152,4 +167,5 @@ Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
 | **PC2** | Broker | WSL Ubuntu mit Mosquitto |
 | **PC1** | Client | Windows-System, verbindet sich mit Broker über Netzwerk-IP |
 | **Port** | 1883/TCP | Muss in der Windows-Firewall auf PC2 freigegeben werden |
+
 
