@@ -40,15 +40,17 @@ Im Folgenden wird der Aufbau einer MQTT-Umgebung beschrieben, bestehend aus:
 
 ### Schritt 1: Installation von WSL und Ubuntu
 
-PowerShell als Administrator öffnen und ausführen:
+CMD als Administrator öffnen und ausführen:
 ```bash
 wsl --install
 ```
-- Windows neu starten.
 
-- Ubuntu aus dem Microsoft Store installieren.
+```bash
+wsl
+```
 
-- Ubuntu-Konsole starten.
+- Ein Adminpasswort hinterlegen
+
 
 ---
 
@@ -171,6 +173,7 @@ Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
 | **PC2** | Broker | WSL Ubuntu mit Mosquitto |
 | **PC1** | Client | Windows-System, verbindet sich mit Broker über Netzwerk-IP |
 | **Port** | 1883/TCP | Muss in der Windows-Firewall auf PC2 freigegeben werden |
+
 
 
 
