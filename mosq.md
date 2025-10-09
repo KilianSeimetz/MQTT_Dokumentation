@@ -96,7 +96,7 @@ mosquitto -c /etc/mosquitto/mosquitto.conf -v
 ip addr show
 ```
 
-→ Notiere die IPv4-Adresse des Netzwerkadapters eth0(z. B. `192.168.1.50`).  
+→ Notiere die IPv4-Adresse des Netzwerkadapters eth0 (z.B. `192.168.1.50`).  
 Diese wird später auf PC1 benötigt, um eine Verbindung aufzubauen.
 
 ---
@@ -167,6 +167,7 @@ Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
 | **PC2** | Broker | WSL Ubuntu mit Mosquitto |
 | **PC1** | Client | Windows-System, verbindet sich mit Broker über Netzwerk-IP |
 | **Port** | 1883/TCP | Muss in der Windows-Firewall auf PC2 freigegeben werden |
+
 
 
 
