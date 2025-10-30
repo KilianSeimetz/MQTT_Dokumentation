@@ -161,7 +161,7 @@ IP-Adresse durch notierte Adresse aus Schritt 5 ersetzen
 mosquitto_pub -h <IP-Adresse> -t test/topic -m "Hallo von PC1"
 ```
 
-IP-Adresse durch die lokale IP-Adresse von PC1 ersetzen
+IP-Adresse durch die lokale IP-Adresse von PC2 ersetzen
 
 ✅ Ergebnis:  
 Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
@@ -175,6 +175,7 @@ Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
 | **PC2** | Broker | WSL Ubuntu mit Mosquitto |
 | **PC1** | Client | Windows-System, verbindet sich mit Broker über Netzwerk-IP |
 | **Port** | 1883/TCP | Muss in der Windows-Firewall auf PC2 freigegeben werden |
+
 
 
 
