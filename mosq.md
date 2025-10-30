@@ -113,10 +113,10 @@ Diese wird später auf PC1 benötigt, um eine Verbindung aufzubauen.
 - Führe folgenden Befehl aus:
 
 ```bash
-netsh interface portproxy add v4tov4 listenport=1883 listenadress=0.0.0.0 connectport=1883 connectadress=<IP-Adresse>
+netsh interface portproxy add v4tov4 listenport=1883 listenaddress=0.0.0.0 connectport=1883 connectaddress=<IP-Adresse>
 ```
 
-`connectadress` IP-Adresse durch notierte Adresse ersetzen
+`connectaddress` IP-Adresse durch notierte Adresse ersetzen
 
 
 ---
@@ -175,6 +175,7 @@ Die Nachricht **"Hallo von PC1"** erscheint im Terminalfenster auf PC2.
 | **PC2** | Broker | WSL Ubuntu mit Mosquitto |
 | **PC1** | Client | Windows-System, verbindet sich mit Broker über Netzwerk-IP |
 | **Port** | 1883/TCP | Muss in der Windows-Firewall auf PC2 freigegeben werden |
+
 
 
 
